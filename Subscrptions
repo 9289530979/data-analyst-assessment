@@ -1,6 +1,13 @@
-subscriptions_Table/ customer_id -- duplicates / 35 rows
+1. subscriptions_Table/ customer_id / duplicates / 35 rows
 
 SELECT customer_id, COUNT(*)
 FROM subscriptions
 GROUP BY customer_id
 HAVING COUNT(*) > 1;
+
+
+2. subscriptions_Table/ end_date / Blank/empty / 718 rows
+
+SELECT end_date
+FROM subscriptions
+WHERE end_date = ''
