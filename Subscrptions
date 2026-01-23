@@ -1,4 +1,4 @@
---Duplicate customer_id--
+subscriptions_Table/ customer_id -- duplicates / 35 rows
 
 SELECT customer_id, COUNT(*)
 FROM subscriptions
