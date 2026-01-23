@@ -1,3 +1,4 @@
+--Duplicate customer_id--
 
 SELECT customer_id, COUNT(*)
 FROM subscriptions
