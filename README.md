@@ -1,3 +1,48 @@
+## Assumptions & Data Issues
+The data contains duplicate events. I kept only the first occurrence of each event per customer.
+	•	Some customers have missing segment values. These were labeled as “Unknown”.
+	•	Subscriptions with NULL end_date are treated as active subscriptions.
+	•	Funnel events are not always in perfect order. I used the first occurrence of each event.
+
+## Metric Definitions
+MRR (Monthly Recurring Revenue)
+MRR is calculated by summing the monthly price of all active subscriptions in each month.
+
+ARR (Annual Recurring Revenue)
+ARR is calculated as MRR multiplied by 12.
+
+Logo Churn
+Logo churn is the percentage of customers who canceled their subscription in a given month.
+
+Revenue Churn
+Revenue churn represents the total recurring revenue lost due to canceled subscriptions in a month.
+
+ARPC (Average Revenue per Customer)
+ARPC is the average monthly revenue generated per active customer.
+
+## Funnel Analysis Approach
+The funnel stages used are Signup → Trial → Activated → Paid → Churned.
+	•	Customers may skip steps, so the funnel is not always linear.
+	•	For each stage, I used the first event date per customer.
+	•	This approach avoids double counting and reflects real user behavior.
+
+## Dashboard Explanation
+MRR Trend
+Shows how monthly recurring revenue changes over time and highlights growth or slowdown.
+
+Funnel Conversion Chart
+Shows where the biggest drop-offs occur between funnel stages.
+
+Churn Overview
+Highlights customer and revenue churn patterns over time.
+
+Source / Segment Breakdown
+Compares performance across acquisition sources or customer segments.
+
+
+
+
+
 ## Insights & Recommendations 
 
 ### 1. Key Growth Bottlenecks
