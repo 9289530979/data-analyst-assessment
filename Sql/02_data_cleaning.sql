@@ -2,13 +2,13 @@
 
 SELECT *
 FROM customers
-WHERE signup_date = '';
+WHERE signup_date IS NULL OR signup_date = '';
 
 2. Customers_Table/ segment -- the column is a blank/empty / 243 rows - Many customers do not have a segment assigned. These were treated as “Unknown” during segmentation analysis.
 
 SELECT *
 FROM customers
-WHERE segment = '';
+WHERE segment IS NULL OR segment = '';
 
 3. subscriptions_Table/ customer_id / duplicates / 35 rows - Some customers have multiple subscription records, which likely represents renewals or plan changes. One active subscription per customer was assumed for revenue calculations.
 
@@ -19,10 +19,10 @@ HAVING COUNT(*) > 1;
 
 
 4. subscriptions_Table/ end_date / Blank/empty / 718 rows - Subscriptions with a missing end date were assumed to be active subscriptions
-
-SELECT end_date
+  
+SELECT *
 FROM subscriptions
-WHERE end_date = ''
+WHERE end_date IS NULL OR end_date = '';
 
 
 5. events_table / duplicate / customer_id / 783 rows  - The events table contains multiple records per customer, 
