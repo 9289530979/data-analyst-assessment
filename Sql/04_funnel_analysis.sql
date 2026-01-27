@@ -13,9 +13,13 @@ SELECT COUNT(DISTINCT customer_id)
 FROM events
 WHERE event_type = 'activated'
 
-4. Paid/ 906 COUNT
-SELECT COUNT(DISTINCT customer_id)
-FROM subscriptions
+4. Paid/ 374 COUNT
+  
+SELECT COUNT(DISTINCT s.customer_id) AS paid_users
+FROM subscriptions s
+JOIN events e
+  ON s.customer_id = e.customer_id
+WHERE e.event_type = 'activated';
 
 5. Churned/ 223 COUNT 
 SELECT COUNT(DISTINCT customer_id)
