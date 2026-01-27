@@ -21,7 +21,8 @@ FROM subscriptions
 WHERE status = 'canceled';
 
 4. Revenue Churn Rate = '21.77030'
-
+This is overall revenue churn share, not period churn
+  
 SELECT
   SUM(CASE WHEN status = 'canceled' THEN monthly_price ELSE 0 END) * 100.0
   / SUM(CASE WHEN status IN ('active', 'canceled') THEN monthly_price ELSE 0 END)
