@@ -1,5 +1,5 @@
 -- 01_table_creation.sql
--- This file creates raw tables for customers, subscriptions, and events
+-- This file creates tables for customers, subscriptions, and events
 
 CREATE TABLE customers (
     customer_id VARCHAR(10),
